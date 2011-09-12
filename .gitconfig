@@ -1,0 +1,16 @@
+[color]
+	diff = always
+	status = always
+	branch = always
+	ui = always
+[user]
+	name = <name here>
+	email = <email here>
+[core]
+	editor = vim
+	autocrlf = false
+[branch]
+	autosetupmerge = true
+	autosetuprebase = always
+[push]
+	default = tracking
