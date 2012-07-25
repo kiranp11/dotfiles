@@ -3,9 +3,14 @@ export PKGCONFIG_PATH="/usr/local/lib/pkgconfig:/opt/local/lib/pkgconfig"
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=~/.cabal/bin:$PATH
 
+export SQL_PATH=/opt/local/lib/postgresql90/bin
+export PATH=$SQL_PATH:$PATH
 export SVN_EDITOR="vim"
 export MANPATH=/opt/local/man:$MANPATH
 export GEM_PATH=/usr/lib/ruby/gems/1.8
+export DATABASE_URL=postgres://joulroad:password@localhost/dev.merchandising
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
+export VIMCLOJURE_SERVER_JAR="$HOME/Library/vimclojure/server-2.3.3.jar"
 #export MAGLEV_HOME=/Users/kprakash/.rvm/rubies/maglev-head
 
 #export PATH=$MAGLEV_HOME/bin:$PATH
@@ -94,6 +99,11 @@ zstyle ':completion:*' squeeze-slashes true
 # done
  
  
+#Project aliases
+alias m='cd ~/Projects/MDI'
+#load vim without plugins in terminal
+alias vim='vim --noplugin'
+alias vi='vim --noplugin'
 # global aliases
 alias c='clear'
 alias g='git'
@@ -143,3 +153,5 @@ typeset -U fpath
 autoload -U _git
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
