@@ -137,7 +137,7 @@ set wildignore+=*~,tmp/**,*.svg,*.ttf,*.gif,*.jpg,*.jpeg,*.png,*.eot,*.woff,*.gz
 " Fonts & Color Scheme ************************************************************************
 
 colorscheme nord
-set guifont=DroidSansMono\ Nerd\ Font:h12
+set guifont=DroidSansMono\ Nerd\ Font:h13
 let g:airline_powerline_fonts = 1
 
 "Gundo configuration
@@ -168,7 +168,8 @@ let g:user_emmet_settings = {
 
 
 " Soft Tabs ************************************************************************
-au BufNewFile, BufRead *.js, *.html, *.css set tabstop=2 
+au BufNewFile, BufRead *.js, *.html, *.css, *.jsx
+    \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
     \ set expandtab
