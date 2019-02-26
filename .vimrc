@@ -51,6 +51,9 @@ Plug 'w0rp/ale'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'mattn/emmet-vim'
 
+" Python
+Plug 'vim-scripts/indentpython.vim'
+
 " Code editing
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -163,12 +166,27 @@ let g:user_emmet_settings = {
     \  },
   \}
 
-" Use 2 spaces
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2
-set expandtab
+
+" Soft Tabs ************************************************************************
+au BufNewFile, BufRead *.js, *.html, *.css set tabstop=2 
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab
 
 " Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
 set si " smartindent  (local to buffer)
+
+" Python Linting ************************************************************************
+
+au BufNewFile, BufRead *.py 
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
